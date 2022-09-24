@@ -1,0 +1,8 @@
+id, filename, label, height, width, dimension, size, max_RGB, min_RGB, red, green, blue
+1, bad_image_1.jpeg,bad,225,225,3,151875,255,0,237,60,66
+2, bad_image_2.jpeg, bad, 1680, 2056, 3, 10362240, 255, 0, 255, 255, 255
+3, bad_image_3.jpeg, bad, 442, 360, 2, 159120, 4, 0, null, null, null
+4, bad_image_4.jpeg, bad, 244, 207, 2, 50508, 88, 0, null, null, null
+5, good_image_1.jpeg, good, 612, 612, 3, 1123632, 255, 0, 255, 255, 255
+6, good_image_2.jpeg, good, 225, 225, 3, 151875, 255, 0, 47, 7, 8
+7, good_image_3.jpeg, good, 406, 425, 3, 517650, 255, 0, 255, 255, 255
