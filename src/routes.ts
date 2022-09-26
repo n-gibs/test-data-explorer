@@ -1,7 +1,7 @@
 // pages
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Products from "./pages/Products";
+import Analyze from "./pages/Analyze";
+import Insights from "./pages/Insights";
 
 // other
 import {FC} from "react";
@@ -24,17 +24,17 @@ export const routes: Array<Route> = [
         component: Home
     },
     {
-        key: 'about-route',
-        title: 'About',
-        path: '/about',
+        key: 'analyze-route',
+        title: 'Analyze',
+        path: '/analyze',
         enabled: true,
-        component: About
+        component: Analyze
     },
     {
-        key: 'products-route',
-        title: 'Products',
-        path: '/products',
+        key: 'insights-route',
+        title: 'Insights',
+        path: '/Insights',
         enabled: true,
-        component: Products
+        component: Insights
     }
 ]
