@@ -36,10 +36,7 @@
       "dimension": 2,
       "size": 159120,
       "max_RGB": 4,
-      "min_RGB": 0,
-      "red": null,
-      "green": null,
-      "blue": null
+      "min_RGB": 0
     },
     {
       "id": 4,
@@ -50,10 +47,7 @@
       "dimension": 2,
       "size": 50508,
       "max_RGB": 88,
-      "min_RGB": 0,
-      "red": null,
-      "green": null,
-      "blue": null
+      "min_RGB": 0
     },
     {
       "id": 5,
@@ -97,4 +91,4 @@
       "green": 255,
       "blue": 255
     }
-  ]
+]
