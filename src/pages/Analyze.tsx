@@ -17,7 +17,6 @@ const Analyze: FC<any> = (): ReactElement => {
     const [filter, setFilter] = useState('all');
     useEffect(() => {
         loadImagesBasedOnFilter('all');
-        console.log(images)
     }, []);
 
 
