@@ -60,10 +60,9 @@ You will also see any lint errors in the console.
 4. 2 tab design - When I first looked at the requrirements I was thinking how to fit everything on to one page. While that may be easier for the user to have everything in one spot, I saw a clear division in the requirements. This helped organize the different use cases for the data exploration.
 5. While including extra data about each image was not explicily in the requirements, I decided to include it. I am not 100% sure if that exact data provided would be relevant since I have no users to ask. It was more so to show the possibilty if more data about each image needed to be displayed (regardless of what that data may be).
 
-
 ## Constraints
 1. Typescript Knowledge - I have never worked with Typscript in a professional setting, only Javascript. I probably did not use it to its full potential but I did enjoy working with it through out this project. I am used to OOP on the backend and the typehinting/checks are very helpful.
 2. CSS is my weak point when it comes to frontend. I relied heavily on  Material UI to help me get over this hurdle.
-3. Time - If I had more time I would have made the app more responsive. I would have loved to add more pagination as well for larger data sets.
+3. Time - If I had more time I would have made the app more responsive. I would have loved to add more pagination as well for larger data sets. I would have loved to add unit tests as well.
 4. Design - While I am a fullstack engineer, I am stronger on the backend. The times I have done frontend, I had a mock up from a designer. I enjoyed the challange of coming up with the deisgn though because its something I never had to do. I had to think in a different way.
 5. Just a laptop - I just moved to San Diego and I am in temporary housing. I don't have my full desk set up. I did the whole project with just my 14inch Macbook.
