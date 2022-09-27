@@ -58,6 +58,7 @@ You will also see any lint errors in the console.
 2. Right now this only works with one dataset. I would have loved to make a more extensable app that would work with any labled Good vs Bad image data set. In the interest of time, I did not make that choice.
 3. Working with Material UI or any component library can have limitations. While it was easy to set up a theme to style the app as a whole. When you want to use one of their componets, you are limited in the styling of it. I thought it was a good choice to get this project off the ground fast.
 4. 2 tab design - When I first looked at the requrirements I was thinking how to fit everything on to one page. While that may be easier for the user to have everything in one spot, I saw a clear division in the requirements. This helped organize the different use cases for the data exploration.
+5. While including extra data about each image was not explicily in the requirements, I decided to include it. I am not 100% sure if that exact data provided would be relevant since I have no users to ask. It was more so to show the possibilty if more data about each image needed to be displayed (regardless of what that data may be).
 
 
 ## Constraints
