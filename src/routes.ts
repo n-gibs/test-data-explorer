@@ -1,5 +1,4 @@
 // pages
-import Home from "./pages/Home";
 import Analyze from "./pages/Analyze";
 import Insights from "./pages/Insights";
 
@@ -17,23 +16,16 @@ interface Route {
 
 export const routes: Array<Route> = [
     {
-        key: 'home-route',
-        title: 'Home',
-        path: '/',
-        enabled: true,
-        component: Home
-    },
-    {
         key: 'analyze-route',
         title: 'Analyze',
-        path: '/analyze',
+        path: '/',
         enabled: true,
         component: Analyze
     },
     {
         key: 'insights-route',
         title: 'Insights',
-        path: '/Insights',
+        path: '/insights',
         enabled: true,
         component: Insights
     }

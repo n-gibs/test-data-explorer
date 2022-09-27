@@ -1,7 +1,9 @@
 import React, { ReactElement, FC, useState, useEffect } from 'react';
 import {
     Box,
+    FormControl,
     Grid,
+    InputLabel,
     MenuItem,
     Select,
     SelectChangeEvent,
@@ -15,10 +17,10 @@ const Analyze: FC<any> = (): ReactElement => {
     const [images, setImages] = useState<Image[]>([]);
     const [selectedImage, setSelectedImage] = useState<Image>();
     const [filter, setFilter] = useState('all');
+
     useEffect(() => {
         loadImagesBasedOnFilter('all');
     }, []);
-
 
     let isLoading: boolean = images.length <= 0;
 
@@ -27,56 +29,74 @@ const Analyze: FC<any> = (): ReactElement => {
         setSelectedImage(img);
     }
 
-    function handleFilterChange(e: SelectChangeEvent<string>) {
+    function handleFilterChange(e: SelectChangeEvent) {
         const filter = e.target.value;
-        setFilter(filter as string)
-        loadImagesBasedOnFilter(filter)
+        setFilter(filter as string);
+        loadImagesBasedOnFilter(filter);
     }
 
-    function loadImagesBasedOnFilter(filter:string) {
-      if (filter === 'all') {
-        let imgs = getImagesAndMetadata();
-        if (imgs.length > 0) {
-            setImages(imgs);
-            setSelectedImage(imgs[0]);
+    function loadImagesBasedOnFilter(filter: string) {
+        if (filter === 'all') {
+            let imgs = getImagesAndMetadata();
+            if (imgs.length > 0) {
+                setImages(imgs);
+                setSelectedImage(imgs[0]);
+            }
+        } else {
+            const filteredImages = getImagesByLabel(filter);
+            setImages(filteredImages);
+            setSelectedImage(filteredImages[0]);
         }
-      } else {
-        const filteredImages = getImagesByLabel(filter);
-        setImages(filteredImages);
-        setSelectedImage(filteredImages[0]);
-      }
     }
 
     return (
-        <Grid
-            container
-            gridTemplateColumns='2fr'
-            gridTemplateRows='2fr'
-            rowSpacing={1}
-            direction='row'
-            justifyContent='space-around'
-            alignItems='center'
-            height='90%'
+        <Box
+            sx={{
+                flexGrow: 1,
+                backgroundColor: 'whitesmoke',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
         >
-            <Grid item gridColumn={1} gridRow={1} xs={8}>
-                <Typography variant='h4'>Apple Dataset</Typography>
-            </Grid>
-            <Grid item gridColumn={2} gridRow={1} xs={2}>
-                <Select value={filter} label='Filter By Label' onChange={handleFilterChange}>
-                    <MenuItem value='all'>All Images</MenuItem>
-                    <MenuItem value='good'>Good Images</MenuItem>
-                    <MenuItem value='bad'>Bad Images</MenuItem>
-                </Select>
-            </Grid>
             <Grid
-                item
-                xs={6}
-                gridColumn={1}
-                gridRow={2}
-                sx={{ overflowY: 'scroll', maxHeight: '90vh' }}
+                container
+                gridTemplateColumns='2fr'
+                gridTemplateRows='2fr'
+                rowSpacing={1}
+                columnSpacing={1}
+                justifyContent='space-around'
+                alignItems='center'
+                width='95vw'
             >
-                {images.map((image, index) => {
-                    return (
+                <Grid item gridColumn={1} gridRow={1} xs={9}>
+                    <Typography variant='h4'>Select A Picture</Typography>
+                </Grid>
+                <Grid item gridColumn={2} gridRow={1} xs={3}>
+                    <FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel id='select-label'>Filter By Label</InputLabel>
+                        <Select
+                            value={filter}
+                            labelId='select-label'
+                            label='Filter By Label'
+                            onChange={handleFilterChange}
+                        >
+                            <MenuItem value='all'>All Images</MenuItem>
+                            <MenuItem value='good'>Good Images</MenuItem>
+                            <MenuItem value='bad'>Bad Images</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Grid>
+                <Grid
+                    item
+                    xs={6}
+                    gridColumn={1}
+                    gridRow={2}
+                    sx={{ overflowY: 'scroll', maxHeight: '90vh' }}
+                >
+                    {images.map((image, index) => {
+                        return (
+                          <Box>
                             <img
                                 key={index}
                                 width='300'
@@ -85,13 +105,15 @@ const Analyze: FC<any> = (): ReactElement => {
                                 alt={image.label}
                                 onClick={() => handleOnClick(image.id)}
                             ></img>
-                    );
-                })}
+                            </Box>
+                        );
+                    })}
+                </Grid>
+                <Grid item gridColumn={2} gridRow={2} xs={6}>
+                    {!isLoading ? <ImageInfo image={selectedImage} /> : null}
+                </Grid>
             </Grid>
-            <Grid item gridColumn={2} gridRow={2} xs={6}>
-                {!isLoading ? <ImageInfo image={selectedImage} /> : null}
-            </Grid>
-        </Grid>
+        </Box>
     );
 };
 

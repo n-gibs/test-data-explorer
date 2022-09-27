@@ -4,28 +4,26 @@ import { getImagesAndMetadata, getTotalForFilter } from '../api/image';
 import DataTable from '../components/DataTable';
 import Image from '../types/Image';
 import GoodBadChart from '../components/GoodBadChart';
+import GoodBadDashboard from '../components/GoodBadDashboard';
 
 type GraphData = {
-  name: string
-  amount: number
-}
+    name: string;
+    amount: number;
+};
 
 const Insights: FC<any> = (): ReactElement => {
     const [images, setImgages] = useState<Image[]>([]);
-    const [goodBadData, setGoodBadData] = useState<GraphData[]>([])
-    const [goodTotal, setGoodTotal] = useState(0)
-    const [badTotal, setBadTotal] = useState(0)
-
+    const [goodBadData, setGoodBadData] = useState<GraphData[]>([]);
+    const [goodTotal, setGoodTotal] = useState(0);
+    const [badTotal, setBadTotal] = useState(0);
 
     useEffect(() => {
         let imgs = getImagesAndMetadata();
         if (imgs.length > 0) {
             setImgages(imgs);
-            //TRADEOFF: with this small data set I could process these totals here but if it was a larger data set, it would be too much for the client to process
             setGoodTotal(getTotalForFilter('label', 'good'));
             setBadTotal(getTotalForFilter('label', 'bad'));
-            setGoodBadData(
-              [
+            setGoodBadData([
                 {
                     name: 'Good',
                     amount: goodTotal,
@@ -36,11 +34,11 @@ const Insights: FC<any> = (): ReactElement => {
                 },
             ]);
         }
-
     }, [images, badTotal, goodTotal]);
 
     const headers = [
         'id',
+        'thumbnail',
         'filename',
         'label',
         'height',
@@ -63,19 +61,20 @@ const Insights: FC<any> = (): ReactElement => {
                 alignItems: 'center',
             }}
         >
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <Typography variant="h3" component="h3">
-                    Good Images: {goodTotal}
-                  </Typography>
-                  <Typography variant="h3" component="h3">
-                    Bad Images: {badTotal}
-                  </Typography>
-                  <Typography variant="h3" component="h3">
-                    Total Images: {images.length}
-                  </Typography>
+            <Grid
+                container
+                spacing={2}
+                width='95vw'
+                justifyContent='space-around'
+            >
+                <Grid item xs={4}>
+                    <GoodBadDashboard
+                        goodTotal={goodTotal}
+                        badTotal={badTotal}
+                        imageTotal={images.length}
+                    />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={8}>
                     <GoodBadChart data={goodBadData} />
                 </Grid>
                 <Grid item xs={12}>
