@@ -64,3 +64,4 @@ You will also see any lint errors in the console.
 2. CSS is my weak point when it comes to frontend. I relied heavily on  Material UI to help me get over this hurdle.
 3. Time - If I had more time I would have made the app more responsive. I would have loved to add more pagination as well for larger data sets.
 4. Design - While I am a fullstack engineer, I am stronger on the backend. The times I have done frontend, I had a mock up from a designer. I enjoyed the challange of coming up with the deisgn though because its something I never had to do. I had to think in a different way.
+5. Just a laptop - I just moved to San Diego and I am in temporary housing. I don't have my full desk set up. I did the whole project with just my 14inch Macbook.
