@@ -29,6 +29,7 @@ const ImageInfo: FC<any> = ({ image }: ImageProps): ReactElement => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'flex-start',
+                marginLeft: '20px'
             }}
         >
             <Grid item xs={6}>

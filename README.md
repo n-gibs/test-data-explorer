@@ -36,8 +36,8 @@ Mocked API function calls are in the `src/api` folder
 Documentation used:
 * [Material Ui](https://mui.com)
 * [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/)
-* [Recharts] (https://recharts.org/en-US/api)
-* [imageio] (https://imageio.readthedocs.io/en/v2.8.0/devapi.html)
+* [Recharts](https://recharts.org/en-US/api)
+* [imageio](https://imageio.readthedocs.io/en/v2.8.0/devapi.html)
 
 ### Run Locally
 
@@ -54,10 +54,11 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ## Trade offs
-1. While we are working on a smaller dataset some of the Mocked API calls could have been computed on the client side with the data. I wanted to this to be scalable for a larger dataset. That is why I had the server handle certian calls.
+1. While we are working on a smaller dataset some of the Mocked API calls could have been computed on the client side with the data. I wanted to this to be scalable for a larger dataset. That is why I had the "server" handle certian calls.
 2. Right now this only works with one dataset. I would have loved to make a more extensable app that would work with any labled Good vs Bad image data set. In the interest of time, I did not make that choice.
 3. Working with Material UI or any component library can have limitations. While it was easy to set up a theme to style the app as a whole. When you want to use one of their componets, you are limited in the styling of it. I thought it was a good choice to get this project off the ground fast.
-4. 2 tab design - When I first looked at the requrirements I was thinking how to fit everything on to one page. While that may be easier for the user to have everything in one spot, I saw a clear division in the requirements. This helped organize the different usecases for the data exploration.
+4. 2 tab design - When I first looked at the requrirements I was thinking how to fit everything on to one page. While that may be easier for the user to have everything in one spot, I saw a clear division in the requirements. This helped organize the different use cases for the data exploration.
+
 
 ## Constraints
 1. Typescript Knowledge - I have never worked with Typscript in a professional setting, only Javascript. I probably did not use it to its full potential but I did enjoy working with it through out this project. I am used to OOP on the backend and the typehinting/checks are very helpful.

@@ -89,14 +89,13 @@ const Analyze: FC<any> = (): ReactElement => {
                 </Grid>
                 <Grid
                     item
-                    xs={6}
+                    xs={7}
                     gridColumn={1}
                     gridRow={2}
                     sx={{ overflowY: 'scroll', maxHeight: '90vh' }}
                 >
                     {images.map((image, index) => {
                         return (
-                          <Box>
                             <img
                                 key={index}
                                 width='300'
@@ -105,11 +104,10 @@ const Analyze: FC<any> = (): ReactElement => {
                                 alt={image.label}
                                 onClick={() => handleOnClick(image.id)}
                             ></img>
-                            </Box>
                         );
                     })}
                 </Grid>
-                <Grid item gridColumn={2} gridRow={2} xs={6}>
+                <Grid item gridColumn={2} gridRow={2} xs={5}>
                     {!isLoading ? <ImageInfo image={selectedImage} /> : null}
                 </Grid>
             </Grid>
