@@ -10,6 +10,7 @@ type Props = {
 const GoodBadDashboard = (props: Props) => {
     return (
         <Box border='3px solid' marginTop='10px'
+        marginLeft='50px'
         sx={{ borderRadius: '5px' }}>
             <Typography
                 gutterBottom

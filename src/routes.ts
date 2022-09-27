@@ -1,17 +1,17 @@
 // pages
-import Analyze from "./pages/Analyze";
-import Insights from "./pages/Insights";
+import Analyze from './pages/Analyze';
+import Insights from './pages/Insights';
 
 // other
-import {FC} from "react";
+import { FC } from 'react';
 
 // interface
 interface Route {
-    key: string,
-    title: string,
-    path: string,
-    enabled: boolean,
-    component: FC<{}>
+    key: string;
+    title: string;
+    path: string;
+    enabled: boolean;
+    component: FC<{}>;
 }
 
 export const routes: Array<Route> = [
@@ -20,13 +20,13 @@ export const routes: Array<Route> = [
         title: 'Analyze',
         path: '/',
         enabled: true,
-        component: Analyze
+        component: Analyze,
     },
     {
         key: 'insights-route',
         title: 'Insights',
         path: '/insights',
         enabled: true,
-        component: Insights
-    }
-]
+        component: Insights,
+    },
+];

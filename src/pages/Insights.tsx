@@ -67,14 +67,14 @@ const Insights: FC<any> = (): ReactElement => {
                 width='95vw'
                 justifyContent='space-around'
             >
-                <Grid item xs={4}>
+                <Grid item xs={5}>
                     <GoodBadDashboard
                         goodTotal={goodTotal}
                         badTotal={badTotal}
                         imageTotal={images.length}
                     />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={7}>
                     <GoodBadChart data={goodBadData} />
                 </Grid>
                 <Grid item xs={12}>

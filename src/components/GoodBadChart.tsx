@@ -13,11 +13,11 @@ type Props = {
 const GoodBadChart = (props: Props): React.ReactElement => {
     return (
         <BarChart
-            width={500}
+            width={650}
             height={300}
             data={props.data}
             margin={{
-                top: 5,
+                top: 10,
                 right: 30,
                 left: 20,
                 bottom: 5,
